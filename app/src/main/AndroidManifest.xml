@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="shop.ruiwenliu.rxjavamanage">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.RxCreateActivity" />
+        <activity android:name=".view.RxMergeActivity" />
+        <activity android:name=".view.RxJustActivity" />
+        <activity android:name=".view.RxFilterActivity" />
+        <activity android:name=".view.RxIntervalActivity" />
+        <activity android:name=".view.RxAsyncActivity" />
+        <activity android:name=".view.RxFlatMapActivity" />
+    </application>
+
+</manifest>

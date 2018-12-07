@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">RxJavaManage</string>
+    <string name="create">初体验</string>
+    <string name="merge">合并</string>
+    <string name="just">Just</string>
+    <string name="filter">过滤</string>
+    <string name="interval">计时</string>
+    <string name="async">AsyncSubject</string>
+    <string name="flatMap">FlatMap</string>
+    <array name="menu_list">
+        <item>@string/create</item>
+        <item>@string/merge</item>
+        <item>@string/just</item>
+        <item>@string/filter</item>
+        <item>@string/interval</item>
+        <item>@string/async</item>
+        <item>@string/flatMap</item>
+    </array>
+</resources>
