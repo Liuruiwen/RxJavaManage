@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     defaultConfig {
         applicationId "shop.ruiwenliu.rxjavamanage"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -36,4 +36,8 @@ dependencies {
     /*RecyclerViewAdapter*/
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.35'
     implementation 'com.android.support:recyclerview-v7:26.1.0'
+    /**
+     * 视频播放
+     */
+    compile 'cn.jzvd:jiaozivideoplayer:6.0.0'
 }
