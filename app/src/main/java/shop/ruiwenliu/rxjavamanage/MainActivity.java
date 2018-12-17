@@ -15,6 +15,7 @@ import butterknife.ButterKnife;
 import shop.ruiwenliu.rxjavamanage.adapter.MenuListAdapter;
 import shop.ruiwenliu.rxjavamanage.view.RxAsyncActivity;
 import shop.ruiwenliu.rxjavamanage.view.RxCreateActivity;
+import shop.ruiwenliu.rxjavamanage.view.RxDataTypeActivity;
 import shop.ruiwenliu.rxjavamanage.view.RxFilterActivity;
 import shop.ruiwenliu.rxjavamanage.view.RxFlatMapActivity;
 import shop.ruiwenliu.rxjavamanage.view.RxIntervalActivity;
@@ -57,13 +58,19 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(RxFilterActivity.getIntent(MainActivity.this));
                         break;
                     case 4:
-                         startActivity(RxIntervalActivity.getIntent(MainActivity.this));
+                        startActivity(RxIntervalActivity.getIntent(MainActivity.this));
                         break;
                     case 5:
                         startActivity(RxAsyncActivity.getIntent(MainActivity.this));
                         break;
                     case 6:
                         startActivity(RxFlatMapActivity.getIntent(MainActivity.this));
+                        break;
+                    case 7:
+                        startActivity(RxDataTypeActivity.getIntent(MainActivity.this));
+                        break;
+                    case 8:
+
                         break;
                 }
             }

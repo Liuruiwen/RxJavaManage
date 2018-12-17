@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
@@ -40,7 +41,7 @@ public class RxIntervalActivity extends BaseActivity {
     public void initData() {
 //        tvContent.append("interval start : " + getNowStrTime() + "\n");
 
-        mDisposable = Observable.interval(1, 1, TimeUnit.SECONDS)
+        mDisposable = Flowable.interval(1, 1, TimeUnit.SECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread()) // 由于interval默认在新线程，所以我们应该切回主线程
                 .subscribe(new Consumer<Long>() {

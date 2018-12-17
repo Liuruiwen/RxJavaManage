@@ -4,6 +4,7 @@ package shop.ruiwenliu.rxjavamanage.view;
 import android.content.Context;
 import android.content.Intent;
 
+import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
@@ -32,7 +33,7 @@ public class RxJustActivity extends BaseActivity{
     public void initData() {
      final   String[] group={"张三","李四","王二"};
 
-        Observable.just(6,group, new JustVo(),6)
+        Flowable.just(6,group, new JustVo(),6)
                 .distinct()//去掉重复项
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

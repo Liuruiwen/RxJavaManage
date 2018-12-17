@@ -36,7 +36,7 @@ import shop.ruiwenliu.rxjavamanage.bean.UserVo;
 /**
  * Created by Amuse
  * Data:2018/12/6 0006
- * Desc:FlatMap
+ * Desc:FlatMap 合并list数据
  */
 
 public class RxFlatMapActivity extends BaseActivity{
@@ -55,7 +55,7 @@ public class RxFlatMapActivity extends BaseActivity{
 
        final StringBuffer sb=new StringBuffer();
         Flowable.fromIterable(getStudentData())
-                .flatMap(new Function< StudentVo, Publisher<StudentVo.Source>>() {
+                .concatMap (new Function< StudentVo, Publisher<StudentVo.Source>>() {
                     @Override
                     public Publisher<StudentVo.Source> apply(@NonNull StudentVo student) throws Exception {
                         sb.append("\n");
@@ -63,17 +63,21 @@ public class RxFlatMapActivity extends BaseActivity{
                         return Flowable.fromIterable(student.list);
                     }
                 })
+//                .subscribeOn(Schedulers.io())
+//                .subscribeOn(Schedulers.newThread())
                 .subscribe(new Consumer<StudentVo.Source>() {
                     @Override
                     public void accept(@NonNull StudentVo.Source source) throws Exception {
                         sb.append("科目："+source.sourceName);
                         sb.append(",分数："+source.sourceScore);
+
+
                         Log.i("rxjava======",sb.toString());
                     }
                 });
+        tvContent.append(sb.toString());
 
 
-        tvContent.setText(sb.toString());
 
 
 
