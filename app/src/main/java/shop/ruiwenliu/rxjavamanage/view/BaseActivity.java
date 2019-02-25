@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import butterknife.BindView;
@@ -23,6 +24,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     TextView tvTitle;
     @BindView(R.id.tv_content)
     TextView tvContent;
+    @BindView(R.id.btn)
+    Button btn;
+
     public   final String TAG = "RxJava";
     public Activity mActivity;
     @Override

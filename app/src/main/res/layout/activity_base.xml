@@ -27,6 +27,13 @@
             android:textColor="@color/textMain"
             android:textSize="18sp" />
     </RelativeLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:text="停止"
+        android:id="@+id/btn"
+        />
 
     <TextView
         android:id="@+id/tv_content"

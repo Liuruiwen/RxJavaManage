@@ -38,7 +38,20 @@ public class RxMergeActivity extends BaseActivity{
         /**
          * 把性别数据合并到用户中去
          */
-        Observable.zip(getSex(), getUser(), new BiFunction<SexVo, UserVo, UserVo>() {
+//        Observable.zip(getSex(), getUser(), new BiFunction<SexVo, UserVo, UserVo>() {
+//            @Override
+//            public UserVo apply(SexVo sexVo, UserVo userVo) throws Exception {
+//                userVo.sex=sexVo.sexName;
+//                return userVo;
+//            }
+//        }).subscribe(new Consumer<UserVo>() {
+//            @Override
+//            public void accept(UserVo userVo) throws Exception {
+//                tvContent.append("用户名："+userVo.name+"；性别："+userVo.sex+"\n");
+//            }
+//        });
+
+        Observable.zip(getSexListData(), getUserListData(), new BiFunction<SexVo, UserVo, UserVo>() {
             @Override
             public UserVo apply(SexVo sexVo, UserVo userVo) throws Exception {
                 userVo.sex=sexVo.sexName;
@@ -52,7 +65,12 @@ public class RxMergeActivity extends BaseActivity{
         });
 
     }
-
+    private Observable<SexVo> getSexListData(){
+        return Observable.fromIterable(getSexData());
+    }
+    private Observable<UserVo> getUserListData(){
+        return Observable.fromIterable(getUserData());
+    }
 
     private Observable<SexVo> getSex(){
         return Observable.create(new ObservableOnSubscribe<SexVo>() {
@@ -113,11 +131,11 @@ public class RxMergeActivity extends BaseActivity{
     private List<UserVo> getUserData(){
         List<UserVo> list=new ArrayList<>();
         UserVo userVo=new UserVo();
-       userVo.name="张三";
+       userVo.name="张三说";
         UserVo userVo1=new UserVo();
-        userVo1.name="李四";
+        userVo1.name="李四听";
         UserVo userVo2=new UserVo();
-        userVo2.name="王二";
+        userVo2.name="王二做";
         UserVo userVo3=new UserVo();
         userVo3.name="独孤求败";
         list.add(userVo);
